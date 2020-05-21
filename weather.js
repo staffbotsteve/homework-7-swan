@@ -156,12 +156,6 @@ function fiveDayForecast(city) {
     $("#weather5").append("<b><img src=\"http://openweathermap.org/img/w/" + iconCur5 + ".png\"></b>");
 
 
-
-
-
-
-
-
     // THEN I am presented with the an icon representation of weather conditions, the - , the humidity, the wind speed, and the UV index
 
     lat = response.city.coord.lat;
@@ -171,7 +165,7 @@ function fiveDayForecast(city) {
 }
 
 function uvIndex(lat, lon) {
-  days = 5;
+  days = 6;
   var queryURL =
     queryBase + "uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
   console.log("queryURL", queryURL);
@@ -179,7 +173,20 @@ function uvIndex(lat, lon) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    console.log("uvi", response);
+    uviCur = response[0].value
+    uvi1 = response[1].value
+    uvi2 = response[2].value
+    uvi3 = response[3].value
+    uvi4 = response[4].value
+    uvi5 = response[5].value
+
+    $("#weatherToday").append("<p style=\"color:black\"><b>UVI " + uviCur + "</p>");
+    $("#weather1").append("<p style=\"color:white\"><b>UVI " + uvi1 + "</p>");
+    $("#weather2").append("<p style=\"color:white\"><b>UVI " + uvi2 + "</p>");
+    $("#weather3").append("<p style=\"color:white\"><b>UVI " + uvi3 + "</p>");
+    $("#weather4").append("<p style=\"color:white\"><b>UVI " + uvi4 + "</p>");
+    $("#weather5").append("<p style=\"color:white\"><b>UVI " + uvi5 + "</p>");
+
   });
 }
 
@@ -195,4 +202,11 @@ function setCity(city) {
       city +
       '<span class="city"></span></a></li>'
   );
+}
+
+//ASK ABOUT THIS ONE... HOW TO PASS THE CITY NAME WHEN CLICKING THE LIST ITEM
+const cityListItems = document.querySelectorAll(".cityList")
+for (const cityListItem of cityListItems) {
+  cityListItem.addEventListener('click', function(fiveDayForecast(cityListItem.textContent)) {
+  })
 }
