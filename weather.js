@@ -101,7 +101,7 @@ function fiveDayForecast(city) {
     $("#weatherToday").append("<b><img src=\"http://openweathermap.org/img/w/" + iconCur + ".png\"></b>");
     
     $("#weather1").empty();
-    $("#weather1").append("<h4 style=\"color:white; text-align: center\"><b>" + dateCur1 + "</b></h4>");
+    $("#weather1").append("<h5 style=\"color:white; text-align: center\"><b>" + dateCur1 + "</b></h4>");
     $("#weather1").append("<h7 style=\"color:white; text-align: center\"><b>  " + city + "</b></h7><br>");
     $("#weather1").append("<li style=\"color:white\"><b>" + weatherCur1 + "</b></li>");
     $("#weather1").append("<li style=\"color:white\"><b>" + descriptionCur1 + "</b></li>");
@@ -112,7 +112,7 @@ function fiveDayForecast(city) {
     $("#weather1").append("<b><img src=\"http://openweathermap.org/img/w/" + iconCur1 + ".png\"></b>");
 
     $("#weather2").empty();
-    $("#weather2").append("<h4 style=\"color:white; text-align: center\"><b>" + dateCur2 + "</b></h4>");
+    $("#weather2").append("<h5 style=\"color:white; text-align: center\"><b>" + dateCur2 + "</b></h4>");
     $("#weather2").append("<h7 style=\"color:white; text-align: center\"><b>  " + city + "</b></h7><br>");
     $("#weather2").append("<li style=\"color:white\"><b>" + weatherCur2 + "</b></li>");
     $("#weather2").append("<li style=\"color:white\"><b>" + descriptionCur2 + "</b></li>");
@@ -123,7 +123,7 @@ function fiveDayForecast(city) {
     $("#weather2").append("<b><img src=\"http://openweathermap.org/img/w/" + iconCur2 + ".png\"></b>");
 
     $("#weather3").empty();
-    $("#weather3").append("<h4 style=\"color:white; text-align: center\"><b>" + dateCur3 + "</b></h4>");
+    $("#weather3").append("<h5 style=\"color:white; text-align: center\"><b>" + dateCur3 + "</b></h4>");
     $("#weather3").append("<h7 style=\"color:white; text-align: center\"><b>  " + city + "</b></h7><br>");
     $("#weather3").append("<li style=\"color:white\"><b>" + weatherCur3 + "</b></li>");
     $("#weather3").append("<li style=\"color:white\"><b>" + descriptionCur3 + "</b></li>");
@@ -134,7 +134,7 @@ function fiveDayForecast(city) {
     $("#weather3").append("<b><img src=\"http://openweathermap.org/img/w/" + iconCur3 + ".png\"></b>");
 
     $("#weather4").empty();
-    $("#weather4").append("<h4 style=\"color:white; text-align: center\"><b>" + dateCur4 + "</b></h4>");
+    $("#weather4").append("<h5 style=\"color:white; text-align: center\"><b>" + dateCur4 + "</b></h4>");
     $("#weather4").append("<h7 style=\"color:white; text-align: center\"><b>  " + city + "</b></h7><br>");
     $("#weather4").append("<li style=\"color:white\"><b>" + weatherCur4 + "</b></li>");
     $("#weather4").append("<li style=\"color:white\"><b>" + descriptionCur4 + "</b></li>");
@@ -145,7 +145,7 @@ function fiveDayForecast(city) {
     $("#weather4").append("<b><img src=\"http://openweathermap.org/img/w/" + iconCur4 + ".png\"></b>");
 
     $("#weather5").empty();
-    $("#weather5").append("<h4 style=\"color:white; text-align: center\"><b>" + dateCur5 + "</b></h4>");
+    $("#weather5").append("<h5 style=\"color:white; text-align: center\"><b>" + dateCur5 + "</b></h4>");
     $("#weather5").append("<h7 style=\"color:white; text-align: center\"><b>  " + city + "</b></h7><br>");
     $("#weather5").append("<li style=\"color:white\"><b>" + weatherCur5 + "</b></li>");
     $("#weather5").append("<li style=\"color:white\"><b>" + descriptionCur5 + "</b></li>");
