@@ -7,10 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="weather.css">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
         <script src="https://momentjs.com/downloads/moment.js">
         </script>
-        <script src="weather.js"></script>
 
     </head>
     <body>
@@ -18,7 +17,7 @@
         <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Cities</a>
             <input class="form-control form-control-dark w-100" type="text" id="searchInput" placeholder="Search" aria-label="Search" onfocus="this.value=''">
-            <ul class="navbar-nav px-3">
+            <ul class="navbar-nav px-3" id>
               <li class="nav-item text-nowrap">
                 <a class="nav-link" id='search' href="#">Search</a>
               </li>
@@ -29,7 +28,7 @@
             <div class="row">
               <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
-                  <ul class="nav flex-column" id="cityList">
+                  <ul class="nav flex-column" id="parentCityList">
                     <li class="nav-item cityList">
                       <a class="nav-link" href="#">
                        <span class="city"></span>

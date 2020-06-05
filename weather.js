@@ -197,16 +197,20 @@ $("#search").click(function () {
 });
 
 function setCity(city) {
-  $("#cityList").prepend(
-    '<li class="nav-item"><a class="nav-link" href="#">' +
+  // console.log('setCity is called')
+  $("#parentCityList").prepend(
+    '<li class="nav-item cityList" data-city="'+city+'">' +
       city +
-      '<span class="city"></span></a></li>'
+      '</li>'
   );
 }
 
 //ASK ABOUT THIS ONE... HOW TO PASS THE CITY NAME WHEN CLICKING THE LIST ITEM
-const cityListItems = document.querySelectorAll(".cityList")
-for (const cityListItem of cityListItems) {
-  cityListItem.addEventListener('click', function(fiveDayForecast(cityListItem.textContent)) {
-  })
-}
+// var cityListItems = document.querySelectorAll(".cityList")
+// for (cityListItem of cityListItems) {
+//   cityListItem.addEventListener('click', fiveDayForecast(cityListItem.textContent)) 
+// }
+$('#parentCityList').on('click', '.cityList', function(){
+  var city = $(this).data('city')
+  fiveDayForecast(city)
+})
