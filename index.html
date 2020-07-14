@@ -1,76 +1,127 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-  <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./Assets/leftnav.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-  </head>
-  <script
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"
-  ></script>
-  <body>
-    <nav class="navbar text-center navbar-dark bg-dark">
-      <span
-        class="navbar-brand text-center mb-0 h1"
-        style="
-          text-align: center;
-          justify-content: center;
-          display: flex;
-          flex-direction: column;
-        "
-        >Weather Dashboard</span
-      >
-    </nav>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="weather.css">
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+        <script src="https://momentjs.com/downloads/moment.js">
+        </script>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md4" style="background-color: gray;">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Cities</a>
+            <input class="form-control form-control-dark w-100" type="text" id="searchInput" placeholder="Search" aria-label="Search" onfocus="this.value=''">
+            <ul class="navbar-nav px-3" id>
+              <li class="nav-item text-nowrap">
+                <a class="nav-link" id='search' href="#">Search</a>
+              </li>
+            </ul>
+          </nav>
           
-            <div class="container-fluid" style="background-color: whitesmoke;">
+          <div class="container-fluid">
+            <div class="row">
+              <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                  <ul class="nav flex-column" id="parentCityList">
+                    <li class="nav-item cityList">
+                      <a class="nav-link" href="#">
+                       <span class="city"></span>
+                      </a>
+                    </li>
+                    </ul>
+                </div>
+              </nav>
+          
+              <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                  <h1 class="h2">Weather Dashboard</h1>
+                </div>
 
+                <div class="card">
+                    <div class="card-body" id="weatherToday">
+                      <h4>Today's Weather</h4>
+                    </div>
+                  </div>
+                  <p>
+                    <hr>
+                  </p>
+                  <div class="row">
+
+                    <div class='col-2'>
+
+                      <div class="card bg-primary" style="width: 9rem;" id="weather1">
+                        <div class="card-body bg-primary">
+                          <h5 class="card-title" id="weatherTitle1" style="color: white;"></h5>
+                          <p class="card-text" style="color: white;"></p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class='col-2'>
+
+                      <div class="card bg-primary" style="width: 9rem;" id="weather2">
+                        <div class="card-body bg-primary">
+                          <h5 class="card-title" id="weatherTitle2" style="color: white;"></h5>
+                          <p class="card-text" style="color: white;"></p>
+                        </div>
+                      </div>
+                      
+
+                    </div>
+
+                    <div class='col-2'>
+                      
+                      <div class="card bg-primary" style="width: 9rem;" id="weather3">
+                        <div class="card-body bg-primary">
+                          <h5 class="card-title" id="weatherTitle3" style="color: white;"></h5>
+                          <p class="card-text" style="color: white;"></p>
+                        </div>
+                      </div>
+                      
+
+                    </div>
+
+                    <div class='col-2'>
+                      
+                      <div class="card bg-primary" style="width: 9rem;" id="weather4">
+                        <div class="card-body bg-primary">
+                          <h5 class="card-title" id="weatherTitle4" style="color: white;"></h5>
+                          <p class="card-text" style="color: white;"></p>
+                        </div>
+                      </div>
+                      
+
+                    </div>
+
+                    <div class='col-2'>
+                      
+                      <div class="card bg-primary" style="width: 9rem;" id="weather5">
+                        <div class="card-body bg-primary">
+                          <h5 class="card-title" id="weatherTitle5" style="color: white;"></h5>
+                          <p class="card-text" style="color: white;"></p>
+                        </div>
+                      </div>
+                      
+
+                    </div>
+
+
+                  </div>
+          
+            </main>
             </div>
-            
-        </div>
-        <div class="col-md8" style="background-color: whitesmoke;">
-          one of two columns test
-        </div>
-      </div>
-    </div>
-    <!-- fluid -->
-    <!-- use 3 ajax calls 
-        current
-        uv index
-        forecast - 5 day forecast, each day is split up into three hour tijmes (40 count array)... split up buy 8 and 4
-        
-        do not use the 16 day weather forecast - it is not free (easier)
-        -->
+          </div>
+          <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    <script src="" async defer></script>
-  </body>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="weather.js"></script>
+    </body>
 </html>
