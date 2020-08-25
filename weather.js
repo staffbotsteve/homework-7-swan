@@ -1,5 +1,5 @@
 var apiKey = "11c2ecc6f7da4895be5f0e57b4d438a9";
-var queryBase = "http://api.openweathermap.org/data/2.5/";
+var queryBase = "https://api.openweathermap.org/data/2.5/";
 var city = "";
 var lat = "";
 var lon = "";
